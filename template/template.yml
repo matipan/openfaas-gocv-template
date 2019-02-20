@@ -1,2 +1,2 @@
-language: go-opencv
+language: gocv
 fprocess: ./handler
