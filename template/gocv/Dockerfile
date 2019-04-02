@@ -1,4 +1,4 @@
-FROM denismakogon/gocv-alpine:4.0.1-buildstage as build-stage
+FROM matipan/gocv-alpine:4.0.1-buildstage as build-stage
 
 # Add the watchdog
 RUN apk upgrade --no-cache && apk --no-cache add curl \ 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN go build -o handler .
 
-FROM denismakogon/gocv-alpine:4.0.1-runtime
+FROM matipan/gocv-alpine:4.0.1-runtime
 
 RUN echo -e '@edgunity http://nl.alpinelinux.org/alpine/edge/community\n\
 @edge http://nl.alpinelinux.org/alpine/edge/main\n\
